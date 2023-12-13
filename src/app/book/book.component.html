@@ -1,0 +1,33 @@
+<section class="actions">
+  <label for="sortDropdown">Sort by:</label>
+  <select id="sortDropdown" (change)="onSortChange($event)">
+    <option></option>
+    <option value="title">Sort by title</option>
+    <option value="date">Sort by publish date</option>
+  </select>
+  <button class="icon" (click)="onAdd()">
+    <i class="fas fa-plus"> Add</i>
+  </button>
+</section>
+<ul class="container">
+  <li *ngFor="let book of bookData" class="book-list">
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">{{ book.title }}</span>
+        <div class="icons">
+          <button class="icon" (click)="onEdit(book)">
+            <i class="fas fa-edit"></i>
+          </button>
+          <button class="icon" (click)="onDelete(book)">
+            <i class="fas fa-trash-alt"></i>
+          </button>
+        </div>
+      </div>
+      <div class="card-content">
+        <img [src]="book.imageUrl" alt="book.title" />
+        <p><a [href]="book.purchaseLink">Purchase </a></p>
+        <p>{{ book.PublishDate }}</p>
+      </div>
+    </div>
+  </li>
+</ul>

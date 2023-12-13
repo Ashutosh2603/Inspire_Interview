@@ -1,0 +1,30 @@
+<div class="container">
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit(userForm)">
+    <div>
+      <label for="name">Title</label>
+      <input type="text" formControlName="title" placeholder="Title" />
+    </div>
+    <div>
+      <label for="email">ImageUrl</label>
+      <input type="url" formControlName="imageUrl" placeholder="ImageUrl" />
+    </div>
+    <div>
+      <label for="company">PurchaseLink</label>
+      <input
+        type="url"
+        formControlName="purchaseLink"
+        placeholder="PurchaseLink"
+      />
+    </div>
+    <div>
+      <label for="address">PublishDate</label>
+      <input
+        type="text"
+        formControlName="publishDate"
+        placeholder="PublishDate"
+      />
+    </div>
+
+    <button type="submit">Submit</button>
+  </form>
+</div>

@@ -1,0 +1,16 @@
+<div *ngIf="!data">Loading...</div>
+<div *ngIf="data">
+  <div *ngFor="let d of data">
+    <section class="author-details">
+      <h3>{{ d.author }}</h3>
+      <h3>{{ d.birthday }}</h3>
+      <h3>{{ d.birthPlace }}</h3>
+    </section>
+
+    <app-book
+      [author]="d.author"
+      [bookData]="d.books"
+      [sortCriteria]="sortCriteria"
+    ></app-book>
+  </div>
+</div>
